@@ -1,6 +1,8 @@
 name: Run Pytest
 
 on:
+  push:
+    branches: ["main"]
   pull_request:
     branches: ["main"]
 
@@ -18,7 +20,9 @@ jobs:
           python-version: 3.13
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          pip install -e .
 
       - name: Run tests
-        run: pytest
+        run: pytest tests/
