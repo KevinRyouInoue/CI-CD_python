@@ -37,7 +37,7 @@ jobs:
         run: echo "DB_USER -> ${DB_USER}"
 
       - name: Print secret
-        run: echo "KEVIN_SECRET -> ${ { secrets.KEVIN_SECRET } }"
+        run: echo "KEVIN_SECRET -> ${{ secrets.KEVIN_SECRET }}"
         
       - name: Get time
         id: get_time
