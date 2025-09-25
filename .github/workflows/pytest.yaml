@@ -29,6 +29,10 @@ jobs:
       - name: Run tests
         run: pytest tests/
 
+      - name: Failure Log
+        if: failure()
+        run: echo "Before failure log"
+
       - name: Print DB_USER
         run: echo "DB_USER -> ${DB_USER}"
 
