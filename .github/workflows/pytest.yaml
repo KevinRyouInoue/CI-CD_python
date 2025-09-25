@@ -39,3 +39,9 @@ jobs:
       - name: Print secret
         run: echo "KEVIN_SECRET -> ${ { secrets.KEVIN_SECRET } }"
         
+      - name: Get time
+        id: get_time
+        run: echo "time=$(date)" >> $GITHUB_OUTPUT
+
+      - name: Print github GITHUB_OUTPUT
+        run: echo "Output of step get_time is -> ${{ steps.get_time.outputs.time }}"
